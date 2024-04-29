@@ -1,0 +1,5 @@
+# Compiled c
+*.out
+
+# Test-related shell files
+*.sh
