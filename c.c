@@ -3,22 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void countLines1() {
-    FILE* fileHandle = fopen("source.txt", "r");
-
-    int lineCount = 0;
-    while (!feof(fileHandle)) {
-        char c = fgetc(fileHandle);
-        
-        if (c == '\n') {
-            ++lineCount;
-        }
-    }
-
-    fclose(fileHandle);
-}
-
-void countLines2() {
+void countLines() {
     // Setup
     FILE* fileHandle = fopen("source.txt", "r");
     fseek(fileHandle, 0, SEEK_END);
@@ -42,7 +27,7 @@ int main() {
     clock_t begin = clock();
 
     for (int i = 0; i < 100000; ++i) {
-        countLines2();
+        countLines();
     }
 
     clock_t end = clock();
